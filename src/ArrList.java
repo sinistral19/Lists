@@ -38,7 +38,7 @@ public class ArrList<T extends  Comparable> extends AList<T>
     @Override
     public void add(T el) {
 
-        //if(currPos==realSize)
+
         currPos++;
         resizeList(currPos);
         array[currPos]=el;
@@ -64,7 +64,7 @@ public class ArrList<T extends  Comparable> extends AList<T>
         resizeList(currPos+list.size());
         list.stream()
                 .forEach(element->add(element));
-        //currPos+=list.size();
+
 
     }
     public void addAll(ArrList<T> list)
@@ -79,7 +79,7 @@ public class ArrList<T extends  Comparable> extends AList<T>
     }
 
     @Override
-    public void remove(int i) //доделать
+    public void remove(int i)
     {   indexCheck(i);
 
         hasSort=false;
@@ -102,9 +102,7 @@ public class ArrList<T extends  Comparable> extends AList<T>
                 hasSort=true;
                 for (int i=0;i<=currPos-1;i++)
                 {
-                    /*T el1=array[i];
-                    T el2=array[i+1];
-               int z=el1.compareTo(el2);*/
+                   
                     if(array[i].compareTo(array[i+1])>=1)
                     {
                         hasSort=false;
